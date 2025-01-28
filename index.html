@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPPS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            min-width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        h4:hover{
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            
+        }
+   
+
+
+
+/* Media Query */
+
+@media (max-width: 768px) {
+
+    h4{
+        display:none;
+    }
+
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 5px 8px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+.yo{
+    display: none;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+}
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-blue-800 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="logo.png" alt="School Logo" class="h-12 mr-4">
+                <h1 class="text-lxl font-bold" style="font-size:larger;"><i>Ajay Satya Prakash Public School</i></h1>
+                <br>
+                <!-- <i><h4 style="position:absolute; top:50px">Developed by @Rajarshi~Yadav</h4></i> -->
+            </div>
+        <nav>
+                <div class="toggle-btn md:hidden">
+                    <div id="mySidebar" class="sidebar">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Clients</a>
+                        <a href="#">Contact</a>
+                      </div>
+                      
+                      <div id="main">
+                        <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+                        <!-- <h2>Collapsed Sidebar</h2>
+                        <p>Content...</p> -->
+                      </div>
+                </div>
+                <div class="yo"><ul class="flex space-x-6 md:space-x-6 md:flex">
+                    <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+                    <li><a href="#facilities" class="hover:text-yellow-400">Facilities</a></li>
+                    <li><a href="#gallery" class="hover:text-yellow-400">Gallery</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+                </ul></div>
+            </nav>
+        </div>
+    </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative">
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="cl.png" alt="Hero Image 1">
+                <img src="pexels-kobeboy-1516440.jpg" alt="Hero Image 2">
+                <img src="scc.jpg" alt="Hero Image 3">
+            </div>
+            <div class="carousel-buttons">
+                <button id="prevBtn">&#10094;</button>
+                <button id="nextBtn">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="bg-yellow-100 py-4">
+        <div class="container mx-auto">
+            <CENTER><h2 class="text-lg font-bold">ANNOUNCEMENTS:</h2></CENTER>
+            <marquee class="text-blue-800" style="background-color: red; color:white">Admissions are open for the 2025-2026 session. Apply now!</marquee>
+        </div>
+    </section>
+
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-10 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Our Facilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="font-bold mb-2">State-of-the-Art Labs</h3>
+                    <p>Modern labs for science, technology, and innovation.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="font-bold mb-2">Sports Facilities</h3>
+                    <p>Spacious playgrounds and professional coaching.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="font-bold mb-2">Library</h3>
+                    <p>A vast collection of books and e-learning resources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-10">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="cl.png" alt="Gallery Image 1" class="rounded shadow">
+                <img src="stu.jpg" alt="Gallery Image 2" class="rounded shadow">
+                <img src="ply.jpg" alt="Gallery Image 3" class="rounded shadow">
+                <img src="hero03.png" alt="Gallery Image 4" class="rounded shadow">
+                <img src="ll.jpg" alt="Gallery Image 3" class="rounded shadow">
+                <img src="pexels-rebecca-zaal-252062-764681.jpg" alt="Gallery Image 4" class="rounded shadow">
+                <img src="logo.png" alt="Gallery Image 4" class="rounded shadow">
+                <img src="pexels-kobeboy-1516440.jpg" alt="Gallery Image 4" class="rounded shadow">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Ajay Satya Prakash Public School All Rights Reserved.</p>
+            <p>Contact: Aspps011@gmail.com | Phone: +0761-2350211</p>
+        </div>
+    </footer>
+
+    <!-- Carousel Script -->
+        <script>
+
+
+const toggleBtn = document.querySelector('.toggle-btn');
+    const navMenu = document.querySelector('nav ul');
+
+    // Add a click event listener to the toggle button
+    toggleBtn.addEventListener('click', () => {
+        // Toggle the 'active' class on the navigation menu
+        navMenu.classList.toggle('active');
+    });
+        // Carousel functionality (same as your existing code)
+        const carouselImages = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let index = 0;
+
+        function showImage(index) {
+            carouselImages.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            index = (index + 1) % images.length;
+            showImage(index);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            index = (index - 1 + images.length) % images.length;
+            showImage(index);
+        });
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            showImage(index);
+        }, 5000);
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+    </script>
+</body>
+</html>
