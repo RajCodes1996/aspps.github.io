@@ -9,6 +9,8 @@
         .carousel {
             position: relative;
             overflow: hidden;
+            max-width: 80%;
+            margin: auto;
         }
 
         .carousel-images {
@@ -18,137 +20,162 @@
 
         .carousel-images img {
             min-width: 100%;
-            height: 400px;
+            height: 300px;
             object-fit: cover;
+            border-radius: 10px;
         }
 
-        h4:hover{
-            font-size: 20px;
-            background-color: black;
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .carousel-buttons button {
+            background: rgba(0, 0, 0, 0.5);
             color: white;
-            
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
         }
-   
+
+        .news-feed {
+            background: wheat;
+            font-weight: bolder ;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+            height: 300px;
+            width: 300px;
+        }
+
+        .news-content {
+            animation: scrollNews 10s linear infinite;
+        }
+
+        @keyframes scrollNews {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
 
 
+        @media (max-width: 768px) {
 
-/* Media Query */
-
-@media (max-width: 768px) {
-
-    h4{
-        display:none;
-    }
+h4{
+    display:none;
+}
 
 .sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+height: 100%; /* 100% Full-height */
+width: 0; /* 0 width - change this with JavaScript */
+position: fixed; /* Stay in place */
+z-index: 1; /* Stay on top */
+top: 0;
+left: 0;
+background-color: #111; /* Black*/
+overflow-x: hidden; /* Disable horizontal scroll */
+padding-top: 60px; /* Place content 60px from the top */
+transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
 /* The sidebar links */
 .sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 20px;
+color: #818181;
+display: block;
+transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
-  color: #f1f1f1;
+color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
 }
 
 /* The button used to open the sidebar */
 .openbtn {
-  font-size: 15px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 5px 8px;
-  border: none;
+font-size: 15px;
+cursor: pointer;
+background-color: #111;
+color: white;
+padding: 5px 8px;
+border: none;
 }
 
 .openbtn:hover {
-  background-color: #444;
+background-color: #444;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s; /* If you want a transition effect */
-  padding: 20px;
+transition: margin-left .5s; /* If you want a transition effect */
+padding: 20px;
 }
 
 .yo{
-    display: none;
+display: none;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 
 }
+
     </style>
 </head>
 <body class="font-sans bg-gray-50">
-    <!-- Header -->
-    <header class="bg-blue-800 text-white py-4">
+    <header class="bg-blue-800 text-white py-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <img src="logo.png" alt="School Logo" class="h-12 mr-4">
-                <h1 class="text-lxl font-bold" style="font-size:larger;"><i>Ajay Satya Prakash Public School</i></h1>
-                <br>
-                <!-- <i><h4 style="position:absolute; top:50px">Developed by @Rajarshi~Yadav</h4></i> -->
+                <img src="images/logo.png" alt="School Logo" class="h-12 mr-4">
+                <i><h1 class="text-xl font-bold">Ajay Satya Prakash Public School</h1></i>
             </div>
-        <nav>
-                <div class="toggle-btn md:hidden">
-                    <div id="mySidebar" class="sidebar">
-                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a href="#">About</a>
-                        <a href="#">Services</a>
-                        <a href="#">Clients</a>
-                        <a href="#">Contact</a>
-                      </div>
-                      
-                      <div id="main">
-                        <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
-                        <!-- <h2>Collapsed Sidebar</h2>
-                        <p>Content...</p> -->
-                      </div>
-                </div>
-                <div class="yo"><ul class="flex space-x-6 md:space-x-6 md:flex">
-                    <li><a href="#" class="hover:text-yellow-400">Home</a></li>
-                    <li><a href="#facilities" class="hover:text-yellow-400">Facilities</a></li>
-                    <li><a href="#gallery" class="hover:text-yellow-400">Gallery</a></li>
-                    <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
-                </ul></div>
-            </nav>
-        </div>
+            <div class="toggle-btn md:hidden">
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Clients</a>
+                    <a href="#">Contact</a>
+                  </div>
+                  
+                  <div id="main">
+                    <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+                    <!-- <h2>Collapsed Sidebar</h2>
+                    <p>Content...</p> -->
+                  </div>
+            </div>
+            <div class="yo"><ul class="flex space-x-6 md:space-x-6 md:flex">
+                <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+                <li><a href="#facilities" class="hover:text-yellow-400">Facilities</a></li>
+                <li><a href="#gallery" class="hover:text-yellow-400">Gallery</a></li>
+                <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+            </ul></div>
+        </nav>
     </div>
-    </header>
-    <!-- Hero Section -->
-    <section class="relative">
+</div>
+</header>
+
+    <section class="relative flex justify-center py-6">
         <div class="carousel">
             <div class="carousel-images">
-                <img src="cl.png" alt="Hero Image 1">
-                <img src="pexels-kobeboy-1516440.jpg" alt="Hero Image 2">
-                <img src="scc.jpg" alt="Hero Image 3">
+                <img src="images/cl.png" alt="Hero Image 1">
+                <img src="images/pexels-kobeboy-1516440.jpg" alt="Hero Image 2">
+                <img src="images/scc.jpg" alt="Hero Image 3">
             </div>
             <div class="carousel-buttons">
                 <button id="prevBtn">&#10094;</button>
@@ -157,64 +184,41 @@
         </div>
     </section>
 
-    <!-- Announcements Section -->
-    <section class="bg-yellow-100 py-4">
-        <div class="container mx-auto">
-            <CENTER><h2 class="text-lg font-bold">ANNOUNCEMENTS:</h2></CENTER>
-            <marquee class="text-blue-800" style="background-color: red; color:white">Admissions are open for the 2025-2026 session. Apply now!</marquee>
-        </div>
-    </section>
-
-
-    <!-- Facilities Section -->
-    <section id="facilities" class="py-10 bg-gray-100">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Our Facilities</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded shadow">
-                    <h3 class="font-bold mb-2">State-of-the-Art Labs</h3>
-                    <p>Modern labs for science, technology, and innovation.</p>
-                </div>
-                <div class="bg-white p-6 rounded shadow">
-                    <h3 class="font-bold mb-2">Sports Facilities</h3>
-                    <p>Spacious playgrounds and professional coaching.</p>
-                </div>
-                <div class="bg-white p-6 rounded shadow">
-                    <h3 class="font-bold mb-2">Library</h3>
-                    <p>A vast collection of books and e-learning resources.</p>
-                </div>
+    <div class="flex justify-center gap-6 my-8">
+        <div class="news-feed">
+            <i><h2 class="text-lg font-bold text-center">Live Updates</h2></i>
+            <div style="color:red" class="news-content">
+                <p>Admissions open for 2025-2026. Apply now!</p>
+                <p>Annual Sports Meet scheduled for March.</p>
+                <p>Parent-Teacher Meeting on February 15.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Gallery Section -->
+<div>
+
+<!-- Gallery Section -->
     <section id="gallery" class="py-10">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Gallery</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <img src="cl.png" alt="Gallery Image 1" class="rounded shadow">
-                <img src="stu.jpg" alt="Gallery Image 2" class="rounded shadow">
-                <img src="ply.jpg" alt="Gallery Image 3" class="rounded shadow">
-                <img src="hero03.png" alt="Gallery Image 4" class="rounded shadow">
-                <img src="ll.jpg" alt="Gallery Image 3" class="rounded shadow">
-                <img src="pexels-rebecca-zaal-252062-764681.jpg" alt="Gallery Image 4" class="rounded shadow">
-                <img src="logo.png" alt="Gallery Image 4" class="rounded shadow">
-                <img src="pexels-kobeboy-1516440.jpg" alt="Gallery Image 4" class="rounded shadow">
+                <img src="images/cl.png" alt="Gallery Image 1" class="rounded shadow">
+                <img src="images/stu.jpg" alt="Gallery Image 2" class="rounded shadow">
+                <img src="images/ply.jpg" alt="Gallery Image 3" class="rounded shadow">
+                <img src="images/hero03.png" alt="Gallery Image 4" class="rounded shadow">
+                <img src="images/ll.jpg" alt="Gallery Image 3" class="rounded shadow">
+                <img src="images/pexels-rebecca-zaal-252062-764681.jpg" alt="Gallery Image 4" class="rounded shadow">
+                <img src="images/logo.png" alt="Gallery Image 4" class="rounded shadow">
+                <img src="images/pexels-kobeboy-1516440.jpg" alt="Gallery Image 4" class="rounded shadow">
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-blue-800 text-white py-6">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 Ajay Satya Prakash Public School All Rights Reserved.</p>
-            <p>Contact: Aspps011@gmail.com | Phone: +0761-2350211</p>
-        </div>
+    <footer class="bg-blue-800 text-white py-6 text-center">
+        <p>&copy; 2025 Ajay Satya Prakash Public School. All Rights Reserved.</p>
+        <p>Contact: Aspps011@gmail.com | Phone: +0761-2350211</p>
     </footer>
 
-    <!-- Carousel Script -->
-        <script>
-
+    <script>
 
 const toggleBtn = document.querySelector('.toggle-btn');
     const navMenu = document.querySelector('nav ul');
@@ -224,7 +228,6 @@ const toggleBtn = document.querySelector('.toggle-btn');
         // Toggle the 'active' class on the navigation menu
         navMenu.classList.toggle('active');
     });
-        // Carousel functionality (same as your existing code)
         const carouselImages = document.querySelector('.carousel-images');
         const images = document.querySelectorAll('.carousel-images img');
         const prevBtn = document.getElementById('prevBtn');
@@ -249,8 +252,10 @@ const toggleBtn = document.querySelector('.toggle-btn');
             index = (index + 1) % images.length;
             showImage(index);
         }, 5000);
-        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
+
+
+
+ function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
 }
