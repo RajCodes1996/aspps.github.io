@@ -6,6 +6,54 @@
     <title>ASPPS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <style>
+
+        body {
+            position: relative;
+            background: linear-gradient(45deg, #1e3a8a, #eb7742, #dfbd29);
+            background-size: 400% 400%;
+            animation: gradientBG 10s infinite ease-in-out;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .bubbles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: floatUp 10s infinite ease-in-out;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
         .carousel {
             position: relative;
             overflow: hidden;
@@ -137,11 +185,19 @@ display: none;
 
     </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="font-sans text-white">
+    <div class="bubbles">
+        <span class="bubble" style="width: 20px; height: 20px; left: 10%; animation-duration: 6s;"></span>
+        <span class="bubble" style="width: 30px; height: 30px; left: 20%; animation-duration: 8s;"></span>
+        <span class="bubble" style="width: 25px; height: 25px; left: 35%; animation-duration: 10s;"></span>
+        <span class="bubble" style="width: 40px; height: 40px; left: 50%; animation-duration: 12s;"></span>
+        <span class="bubble" style="width: 15px; height: 15px; left: 65%; animation-duration: 7s;"></span>
+        <span class="bubble" style="width: 35px; height: 35px; left: 80%; animation-duration: 9s;"></span>
+    </div>
     <header class="bg-blue-800 text-white py-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <img src="logo.png" alt="School Logo" class="h-12 mr-4">
+                <img src="images/logo.png" alt="School Logo" class="h-12 mr-4">
                 <i><h1 class="text-xl font-bold">Ajay Satya Prakash Public School</h1></i>
             </div>
             <div class="toggle-btn md:hidden">
@@ -154,7 +210,7 @@ display: none;
                   </div>
                   
                   <div id="main">
-                    <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+                    <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
                     <!-- <h2>Collapsed Sidebar</h2>
                     <p>Content...</p> -->
                   </div>
@@ -186,7 +242,7 @@ display: none;
 
     <div class="flex justify-center gap-6 my-8">
         <div class="news-feed">
-            <i><h2 class="text-lg font-bold text-center">Live Updates</h2></i>
+            <i><h2 style="color:black"class="text-lg font-bold text-center">Live Updates</h2></i>
             <div style="color:red" class="news-content">
                 <p>Admissions open for 2025-2026. Apply now!</p>
                 <p>Annual Sports Meet scheduled for March.</p>
