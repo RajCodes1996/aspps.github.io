@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPPS</title>
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("hidden");
+        }
+    </script>
+</head>
+<body>
+   <section class="header bg-cover bg-center min-h-screen relative" loading="lazy"
+         style="background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('images/ass.png');">
+        <nav class="flex items-center justify-between p-4 relative">
+            <a href="index.html">
+                <img src="images/logoo.png" id="logo" class="h-20">
+            </a>
+        
+            <!-- Toggle Button -->
+            <button class="lg:hidden text-white text-3xl" onclick="toggleMenu()">&#9776;</button>
+        
+            <!-- Navigation Menu -->
+           <div id="nav-links" class="hidden lg:flex flex-col lg:flex-row absolute lg:static top-16 left-0 w-full lg:w-auto bg-blue-900 lg:bg-transparent p-4 lg:p-0 shadow-lg lg:shadow-none z-50">
+
+                <ul class="flex flex-col lg:flex-row text-white text-lg space-y-4 lg:space-y-0 lg:space-x-6 text-center w-full justify-center items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        
+        <div class="text-box text-center text-white mt-20">
+            <h1 class="text-4xl md:text-6xl font-bold">Ajay Satya Prakash Public School</h1>
+            <p class="text-lg md:text-xl mt-4">An effort towards a better future, inspiring the upcoming ones...</p>
+            <a href="#" class="inline-block mt-6 px-6 py-2 border border-white text-white hover:bg-red-500 transition">Visit us to know more</a>
+        </div>
+    </section>
+    
+    <!-- Courses Section -->
+    <section class="course" id="courses">
+        <h1 class="text-red-600 text-3xl font-bold">Courses we offer</h1>
+        <p class="text-lg text-gray-600">Using an advanced quality scoring algorithm and machine learning</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div class="course-col p-6 bg-pink-100 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold">Intermediate</h3>
+                <h5>We offer several Intermediate courses for beginners!</p>
+            </div>
+            <div class="course-col p-6 bg-pink-100 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold">Degree</h3>
+                <h5>Efficient and Accurate Degree courses via Distance Learning</p>
+            </div>
+            <div class="course-col p-6 bg-pink-100 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold">Post Graduate</h3>
+                <h5>High-level postgraduate courses offered for graduated students!</p>
+            </div>
+        </div>
+    </section>
+    
+<!-- Gallery Section -->
+<section id="gallery" class="py-10">
+    <div class="container mx-auto text-center">
+        <h2 class="text-green-600 text-3xl font-bold mb-6">Gallery</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img src="images/cl.png" data-src="images/cl.png" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+            <img src="images/stu.jpg" data-src="images/stu.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+            <img src="images/ply.jpg" data-src="images/ply.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+            <img src="images/hero03.png" data-src="images/hero03.png" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+            <img src="images/ll.jpg" data-src="images/ll.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+            <img src="images/pexels-rebecca-zaal-252062-764681.jpg" data-src="images/pexels-rebecca-zaal-252062-764681.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+            <img src="images/scc.jpg" data-src="images/scc.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+            <img src="images/pexels-kobeboy-1516440.jpg" data-src="images/pexels-kobeboy-1516440.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+        </div>
+    </div>
+</section>
+    
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-6 text-center">
+        <p class="text-lg">&copy; 2025 Ajay Satya Prakash Public School. All Rights Reserved.</p>
+        <p class="text-lg">Contact: Aspps011@gmail.com | Phone: +0761-2350211</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            let nav = document.getElementById("nav-links");
+            nav.classList.toggle("hidden");
+        }
+
+        $(document).ready(function() {
+            $("#loadCourses").click(function() {
+                $.ajax({
+                    url: "courses.php",
+                    type: "GET",
+                    success: function(data) {
+                        $("#courses").html(data);
+                    }
+                });
+            });
+        });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const lazyImages = document.querySelectorAll(".lazy-image");
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const newImg = new Image();
+                    newImg.src = img.dataset.src;
+                    newImg.onload = () => {
+                        img.src = img.dataset.src;
+                        img.classList.add("loaded"); // Removes blur
+                        observer.unobserve(img);
+                    };
+                }
+            });
+        });
+
+        lazyImages.forEach(img => observer.observe(img));
+    });
+</script>
+
+</body>
+</html>
