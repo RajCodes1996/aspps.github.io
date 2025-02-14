@@ -83,11 +83,11 @@
 </section>
 
 <!-- Modal -->
-<div id="admissionModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-    <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
-        <h2 class="text-xl font-bold text-red-600">Admissions Open!</h2>
-        <p class="mt-2 text-gray-700">Admissions for 2024-25 are now open. Enroll today!</p>
-        <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">OK</button>
+<div id="imagePopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-md">
+        <h2 class="text-xl font-bold text-blue-600">Admissions Open enroll now!</h2>
+        <img src="seven.jpg" alt="Popup Image" class="mt-4 rounded-lg shadow-md" width="300">
+        <button onclick="closeImagePopup()" class="mt-4 px-4 py-2 bg-red-600 text-white rounded">Continue</button>
     </div>
 </div>
     
@@ -140,20 +140,17 @@
 </script>
 
 <script>
-    // Show the modal after 5 seconds
+    // Show the image popup after 5 seconds
     window.onload = function () {
         setTimeout(function () {
-            document.getElementById("admissionModal").classList.remove("hidden");
+            document.getElementById("imagePopup").classList.remove("hidden");
         }, 5000);
     };
 
-    // Function to close the modal
-    function closeModal() {
-        document.getElementById("admissionModal").classList.add("hidden");
+    // Function to close the image popup
+    function closeImagePopup() {
+        document.getElementById("imagePopup").classList.add("hidden");
     }
 </script>
-
-
-    
 </body>
 </html>
