@@ -29,10 +29,10 @@
 
                 <ul class="flex flex-col lg:flex-row text-white text-lg space-y-4 lg:space-y-0 lg:space-x-6 text-center w-full justify-center items-center">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About School</a></li>
+                    <li><a href="#">Academics</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -48,19 +48,19 @@
     <!-- Courses Section -->
     <section class="course" id="courses">
         <h1 class="text-red-600 text-3xl font-bold">Courses we offer</h1>
-        <p class="text-lg text-gray-600">Using an advanced quality scoring algorithm and machine learning</p>
+        <p class="text-lg text-gray-600"><b>At Ajay Satya Prakash, we believe in nurturing young minds with a strong foundation in academics and practical knowledge.</b></p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <div class="course-col p-6 bg-pink-100 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold">Intermediate</h3>
-                <h5>We offer several Intermediate courses for beginners!</p>
+                <h3 class="text-xl font-bold">(Classes 1st-8th)</h3>
+                <h5>We focus on building fundamental skills in subjects like Mathematics, Science, Languages, and Social Studies. Interactive learning, activity-based projects</p>
             </div>
             <div class="course-col p-6 bg-pink-100 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold">Degree</h3>
-                <h5>Efficient and Accurate Degree courses via Distance Learning</p>
+                <h3 class="text-xl font-bold">(Classes 9th-12th)</h3>
+                <h5>Designed to prepare students for board exams and future careers, our high school curriculum includes core subjects.</p>
             </div>
             <div class="course-col p-6 bg-pink-100 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold">Post Graduate</h3>
-                <h5>High-level postgraduate courses offered for graduated students!</p>
+                <h3 class="text-xl font-bold">Skill-Based & Extracurricular Courses</h3>
+                <h5>Computer Science & Coding, Sports & Physical Education, Music, Dance & Arts </p>
             </div>
         </div>
     </section>
@@ -68,7 +68,7 @@
 <!-- Gallery Section -->
 <section id="gallery" class="py-10">
     <div class="container mx-auto text-center">
-        <h2 class="text-green-600 text-3xl font-bold mb-6">Gallery</h2>
+        <h2 class="text-green-600 text-3xl font-bold mb-6"><i>Gallery</i></h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <img src="one.png" data-src="one.png" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
             <img src="two.jpg" data-src="two.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
@@ -76,15 +76,24 @@
             <img src="four.jpg" data-src="four.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
             <img src="five.jpg" data-src="five.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
             <img src="six.jpg" data-src="six.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
-            <img src="seven.jpg" data-src="seven.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
+            <img src="ten.jpg" data-src="ten.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
             <img src="eight.jpg" data-src="eight.jpg" class="rounded shadow lazy-image" loading="lazy" width="300" height="200">
         </div>
     </div>
 </section>
+
+<!-- Modal -->
+<div id="imagePopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-md">
+        <h2 class="text-xl font-bold text-blue-600">Admissions Open Enroll Now!</h2>
+        <img src="seven.jpg" alt="Popup Image" class="mt-4 rounded-lg shadow-md" width="300">
+        <button onclick="closeImagePopup()" class="mt-4 px-4 py-2 bg-red-600 text-white rounded">Continue</button>
+    </div>
+</div>
     
     <!-- Footer -->
     <footer class="bg-blue-800 text-white py-6 text-center">
-        <p class="text-lg">&copy; 2025 Ajay Satya Prakash Public School. All Rights Reserved.</p>
+        <p class="text-lg">&copy; 2025 Ajay Satya Prakash Public School Panagar, Keolari, Jabalpur (M.P) 483220</p>
         <p class="text-lg">Contact: Aspps011@gmail.com | Phone: +0761-2350211</p>
     </footer>
 
@@ -130,5 +139,18 @@
     });
 </script>
 
+<script>
+    // Show the image popup after 5 seconds
+    window.onload = function () {
+        setTimeout(function () {
+            document.getElementById("imagePopup").classList.remove("hidden");
+        }, 5000);
+    };
+
+    // Function to close the image popup
+    function closeImagePopup() {
+        document.getElementById("imagePopup").classList.add("hidden");
+    }
+</script>
 </body>
 </html>
