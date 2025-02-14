@@ -91,11 +91,32 @@
     </div>
 </div>
     
-    <!-- Footer -->
-    <footer class="bg-blue-800 text-white py-6 text-center">
-        <p class="text-lg">&copy; 2025 Ajay Satya Prakash Public School Panagar, Keolari, Jabalpur (M.P) 483220</p>
-        <p class="text-lg">Contact: Aspps011@gmail.com | Phone: +0761-2350211</p>
-    </footer>
+    <!-- Add this in the <head> section to include FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Footer -->
+<footer class="bg-blue-800 text-white py-6 text-center">
+    <p class="text-lg">&copy; 2025 Ajay Satya Prakash Public School Panagar, Keolari, Jabalpur (M.P) 483220</p>
+    <p class="text-lg">Contact: 
+        <a href="mailto:Aspps011@gmail.com" class="underline hover:text-gray-300">Aspps011@gmail.com</a> | 
+        Phone: <a href="tel:+07612350211" class="underline hover:text-gray-300">+0761-2350211</a>
+    </p>
+    
+    <!-- Social Media Links -->
+    <div class="mt-4 flex justify-center space-x-6">
+        <!-- Gmail Link -->
+        <a href="mailto:Aspps011@gmail.com" target="_blank" class="flex items-center space-x-2 hover:text-gray-300">
+            <i class="fas fa-envelope text-xl"></i>
+            <span>Email Us</span>
+        </a>
+
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/ajay_satyaprakash_school/?hl=en" target="_blank" class="flex items-center space-x-2 hover:text-gray-300">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="h-6 w-6">
+            <span>Follow us on Instagram</span>
+        </a>
+    </div>
+</footer>
 
     <script>
         function toggleMenu() {
