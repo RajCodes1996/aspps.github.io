@@ -241,7 +241,7 @@ h5 {
 }
 
 #news-text {
-    animation: scrollNews 10s linear infinite;
+    animation: scrollNews 4s linear infinite;
     display: inline-block;
     padding-left: 100%;
 }
