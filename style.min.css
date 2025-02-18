@@ -242,6 +242,6 @@ h5 {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    animation: scrollNews **45s** linear infinite; /* Increased from 15s to 25s */
+    animation: scrollNews **55s** linear infinite; /* Increased from 15s to 25s */
 }
 
