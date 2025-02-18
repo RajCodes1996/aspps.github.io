@@ -230,19 +230,18 @@ h5 {
 
 
 @keyframes scrollNews {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
-#news-container {
-    display: flex;
+.news-scroll {
+    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-}
-
-#news-text {
-    animation: scrollNews 4s linear infinite;
-    display: inline-block;
-    padding-left: 100%;
+    animation: scrollNews **25s** linear infinite; /* Increased from 15s to 25s */
 }
 
