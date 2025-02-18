@@ -44,20 +44,6 @@
             <a href="#" class="inline-block mt-6 px-6 py-2 border border-white text-white hover:bg-red-500 transition">Visit us to know more</a>
         </div>
     </section>
-
-<!-- Live News Feed Section -->
-<div class="relative bg-gray-100 py-6">
-    <div class="container mx-auto">
-        <h2 class="text-center text-3xl font-bold text-blue-700 mb-6">Live News & Updates</h2>
-        
-        <div class="overflow-hidden relative w-full bg-blue-900 rounded-lg shadow-lg">
-            <div id="news-container" class="flex items-center justify-start whitespace-nowrap text-white py-3 px-6 text-lg font-semibold animate-news">
-                <span id="news-text">Loading latest updates...</span>
-            </div>
-        </div>
-    </div>
-</div>
-
     
     <!-- Courses Section -->
     <section class="course" id="courses">
@@ -188,23 +174,5 @@
     }
 </script>
 
-<script>
-const newsItems = [
-    "🚀 Breaking News: School Annual Function on 25th Feb",
-    "🎓 Admissions Open for 2025-26",
-    "🏆 Sports Meet Coming Soon!",
-    "🎭 Drama Competition on 5th March!",
-    "📢 Science Exhibition on 10th March!"
-];
-
-let index = 0;
-function updateNews() {
-    const newsText = document.getElementById("news-text");
-    newsText.textContent = newsItems[index]; // Change text
-    index = (index + 1) % newsItems.length;  // Loop through news items
-}
-
-// Update news every **30 seconds** (same as animation duration)
-setInterval(updateNews, 8000);
 </body>
 </html>
