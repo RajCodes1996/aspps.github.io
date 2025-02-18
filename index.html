@@ -200,16 +200,13 @@ const newsItems = [
 let index = 0;
 function updateNews() {
     const newsText = document.getElementById("news-text");
-    newsText.style.animation = "none"; // Reset animation
-    setTimeout(() => {
-        newsText.textContent = newsItems[index];
-        newsText.style.animation = "scrollNews 50s linear infinite"; // Slower scroll
-        index = (index + 1) % newsItems.length;
-    }, 300);
+    newsText.textContent = newsItems[index]; // Change text
+    index = (index + 1) % newsItems.length;  // Loop through news items
 }
 
-// Update news every **20 seconds** instead of 10
-setInterval(updateNews, 20000);
+// Update news every **30 seconds** (same as animation duration)
+setInterval(updateNews, 80000);
+
     
 </body>
 </html>
