@@ -203,14 +203,13 @@ function updateNews() {
     newsText.style.animation = "none"; // Reset animation
     setTimeout(() => {
         newsText.textContent = newsItems[index];
-        newsText.style.animation = "scrollNews 25s linear infinite"; // Slow down animation
+        newsText.style.animation = "scrollNews 50s linear infinite"; // Slower scroll
         index = (index + 1) % newsItems.length;
-    }, 300); // Small delay to reset animation
+    }, 300);
 }
 
-// Update news every **10 seconds** (instead of 5)
-setInterval(updateNews, 15000);
-
- 
+// Update news every **20 seconds** instead of 10
+setInterval(updateNews, 20000);
+    
 </body>
 </html>
