@@ -230,10 +230,13 @@ h5 {
 .news-ticker {
     overflow: hidden;
     background: orange;
-    color: white;
+    color: red;
     padding: 10px 0;
     position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .news-scroll {
