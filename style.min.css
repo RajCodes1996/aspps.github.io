@@ -240,7 +240,7 @@ h5 {
 #news-text {
     display: inline-block;
     position: relative;
-    animation: scrollNews 15s linear infinite;
+    animation: scrollNews 30s linear infinite;
 }
 
 @keyframes scrollNews {
