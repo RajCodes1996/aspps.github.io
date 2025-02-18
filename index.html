@@ -44,7 +44,17 @@
             <a href="#" class="inline-block mt-6 px-6 py-2 border border-white text-white hover:bg-red-500 transition">Visit us to know more</a>
         </div>
     </section>
-    
+
+<!-- Live News Feed Section -->
+<section id="news-feed" class="bg-gray-100 py-8">
+    <div class="container mx-auto">
+        <h2 class="text-center text-3xl font-bold text-blue-700 mb-4">Live News & Updates</h2>
+        <div id="news-container" class="bg-white shadow-lg rounded-lg p-4">
+            <p class="text-gray-600 text-center">Loading latest updates...</p>
+        </div>
+    </div>
+</section>
+
     <!-- Courses Section -->
     <section class="course" id="courses">
         <h1 class="text-red-600 text-3xl font-bold">Courses we offer</h1>
@@ -161,17 +171,21 @@
 </script>
 
 <script>
-    // Show the image popup after 5 seconds
-    window.onload = function () {
-        setTimeout(function () {
-            document.getElementById("imagePopup").classList.remove("hidden");
-        }, 5000);
-    };
+const newsItems = [
+    "📰 School Annual Function on 25th Feb",
+    "📢 Admissions Open for 2025-26",
+    "🏆 Sports Meet Coming Soon!",
+    "🎭 Drama Competition on 5th March!"
+];
 
-    // Function to close the image popup
-    function closeImagePopup() {
-        document.getElementById("imagePopup").classList.add("hidden");
-    }
+let index = 0;
+function updateNews() {
+    document.getElementById("news-text").innerText = newsItems[index];
+    index = (index + 1) % newsItems.length;
+}
+
+// Change news every 5 seconds
+setInterval(updateNews, 5000);
 </script>
 
 </body>
