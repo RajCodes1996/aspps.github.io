@@ -234,26 +234,14 @@ h5 {
     padding: 10px 0;
     position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-}
-
-.news-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
 }
 
 .news-scroll {
     display: inline-block;
     white-space: nowrap;
     animation: scrollNews 15s linear infinite;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center; /* Ensures text alignment inside */
 }
+
 
 
 
