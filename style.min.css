@@ -218,6 +218,17 @@ h5 {
     filter: blur(0);
 }
 
+#news-container {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#news-container div {
+    font-size: 16px;
+    padding: 10px;
+}
+
+
 @keyframes scrollNews {
     from {
         transform: translateX(100%);
