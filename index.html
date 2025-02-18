@@ -171,6 +171,20 @@
 </script>
 
 <script>
+    // Show the image popup after 5 seconds
+    window.onload = function () {
+        setTimeout(function () {
+            document.getElementById("imagePopup").classList.remove("hidden");
+        }, 5000);
+    };
+
+    // Function to close the image popup
+    function closeImagePopup() {
+        document.getElementById("imagePopup").classList.add("hidden");
+    }
+</script>
+
+<script>
 const newsItems = [
     "📰 School Annual Function on 25th Feb",
     "📢 Admissions Open for 2025-26",
