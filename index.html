@@ -189,27 +189,24 @@
 </script>
 
 <script>
-    const newsItems = [
-        "🚀 Breaking News: School Annual Function on 25th Feb",
-        "🎓 Admissions Open for 2025-26",
-        "🏆 Sports Meet Coming Soon!",
-        "🎭 Drama Competition on 5th March!",
-        "📢 Science Exhibition on 10th March!"
-    ];
-    
-    let index = 0;
-    function updateNews() {
-        const newsText = document.getElementById("news-text");
-        newsText.style.animation = "none"; // Reset animation
-        setTimeout(() => {
-            newsText.textContent = newsItems[index];
-            newsText.style.animation = "scrollNews 15s linear infinite";
-            index = (index + 1) % newsItems.length;
-        }, 300); // Small delay to reset animation
-    }
-    
-    // Update news every 5 seconds
-    setInterval(updateNews, 5000);
+   const newsItems = [
+    "🚀 Breaking News: School Annual Function on 25th Feb!",
+    "🎓 Admissions Open for 2025-26. Apply Now!",
+    "🏆 Sports Meet Coming Soon. Get Ready!",
+    "🎭 Drama Competition on 5th March. Join Us!",
+    "📢 Science Exhibition on 10th March. Don't Miss It!"
+];
+
+let index = 0;
+
+function updateNews() {
+    const newsText = document.getElementById("news-text");
+    newsText.textContent = newsItems[index];
+    index = (index + 1) % newsItems.length;
+}
+
+// Update news every 5 seconds
+setInterval(updateNews, 5000);
     </script>
  
 </body>
